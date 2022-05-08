@@ -21,7 +21,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.eraybarisbahadir.benim_musteri_test.R;
-import com.eraybarisbahadir.benim_musteri_test.Tickets;
 import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -29,8 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
     private Button kurumKayit;
-    private Button ticketSayfasi;
-
+//
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +38,6 @@ public class LoginActivity extends AppCompatActivity {
 
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
-        ticketSayfasi =(Button) findViewById(R.id.blogin);
-        ticketSayfasi.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openTicketPage();
-            }
-        }));
         kurumKayit = (Button) findViewById(R.id.buttonkayitol);
         kurumKayit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,11 +129,6 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void openCompanySignup(){
         Intent intent=new Intent(this, SignUpActivity.class);
-        startActivity(intent);
-        finish();
-    }
-    public void openTicketPage(){
-        Intent intent=new Intent(this, Tickets.class);
         startActivity(intent);
         finish();
     }
