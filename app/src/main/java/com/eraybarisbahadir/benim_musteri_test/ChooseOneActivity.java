@@ -1,13 +1,11 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.eraybarisbahadir.benim_musteri_test.ui.login.LoginActivity;
 

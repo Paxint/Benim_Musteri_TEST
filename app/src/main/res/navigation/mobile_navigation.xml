@@ -7,19 +7,16 @@
 
     <fragment
         android:id="@+id/navigation_open"
-        android:name="com.eraybarisbahadir.benim_musteri_test.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_open" />
 
     <fragment
         android:id="@+id/navigation_ongoing"
-        android:name="com.eraybarisbahadir.benim_musteri_test.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_ongoing" />
 
     <fragment
         android:id="@+id/navigation_solved"
-        android:name="com.eraybarisbahadir.benim_musteri_test.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_solved" />
 </navigation>

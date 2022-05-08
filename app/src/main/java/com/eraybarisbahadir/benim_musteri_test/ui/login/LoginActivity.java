@@ -21,6 +21,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.eraybarisbahadir.benim_musteri_test.R;
+import com.eraybarisbahadir.benim_musteri_test.Tickets;
 import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
     private Button kurumKayit;
+    private Button blogin;
 //
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class LoginActivity extends AppCompatActivity {
 
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
+
+        blogin =(Button) findViewById(R.id.login);
+        blogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTicketPage();
+            }
+        });
+
         kurumKayit = (Button) findViewById(R.id.buttonkayitol);
         kurumKayit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,13 +141,18 @@ public class LoginActivity extends AppCompatActivity {
     public void openCompanySignup(){
         Intent intent=new Intent(this, SignUpActivity.class);
         startActivity(intent);
-        finish();
+    }
+    public void openTicketPage(){
+        Intent intent=new Intent(this, Tickets.class);
+        startActivity(intent);
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        openTicketPage();
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
