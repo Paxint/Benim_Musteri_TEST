@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="BMLACI">#2d4059</color>
+    <color name="BMSARI">#fde9c9</color>
+    <color name="BMGRI">#898b8a</color>
+    <color name="BMKIRMIZI">#b3404a</color>
+    <color name="BMTURKUAZ">#2c6c64</color>
+    <color name="BMLOGINMAVI">#1c54db</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

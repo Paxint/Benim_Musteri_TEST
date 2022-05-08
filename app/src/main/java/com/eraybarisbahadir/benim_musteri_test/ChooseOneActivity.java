@@ -1,0 +1,39 @@
+package com.eraybarisbahadir.benim_musteri_test;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+
+import com.eraybarisbahadir.benim_musteri_test.ui.login.LoginActivity;
+
+
+public class ChooseOneActivity extends AppCompatActivity {
+    private Button kurumLoginClick;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_choose_one);
+
+        kurumLoginClick = (Button) findViewById(R.id.buttonk1);
+        kurumLoginClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCompanyLogin();
+            }
+        });
+
+
+    }
+    public void openCompanyLogin(){
+        Intent intent=new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+}

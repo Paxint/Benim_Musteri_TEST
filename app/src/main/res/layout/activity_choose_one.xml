@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2d4059"
+    tools:context=".ChooseOneActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/choose_one" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="18dp"
+        android:layout_height="45dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonk1"
+        app:layout_constraintEnd_toEndOf="@+id/buttonk1"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="@+id/buttonk1"
+        app:layout_constraintTop_toTopOf="@+id/buttonk1"
+        app:layout_constraintVertical_bias="0.475"
+        app:srcCompat="@drawable/saga_ok"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="18dp"
+        android:layout_height="45dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.503"
+        app:srcCompat="@drawable/saga_ok"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/buttonk1"
+        android:layout_width="320dp"
+        android:layout_height="190dp"
+        android:clickable="true"
+        android:linksClickable="false"
+        android:onClick="kurumLoginClick"
+        android:paddingLeft="30dp"
+        android:text="Müşterim      için geldim"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#FDE9C9"
+        android:textSize="34sp"
+        app:backgroundTint="#2D4059"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473"
+        app:strokeColor="#FDE9C9"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="320dp"
+        android:layout_height="190dp"
+        android:paddingLeft="30dp"
+        android:text="Müşteri               Benim"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#FDE9C9"
+        android:textSize="34sp"
+        app:backgroundTint="#2D4059"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:strokeColor="#FDE9C9"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
