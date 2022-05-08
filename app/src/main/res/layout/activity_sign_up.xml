@@ -69,7 +69,7 @@
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_gravity="start"
-        android:backgroundTint="#2D4059"
+        android:backgroundTint="@color/black"
         android:enabled="false"
         android:text="Kayıt Ol"
         android:textAllCaps="false"
