@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_open"
-        android:icon="@drawable/ic_question_mark"
-        android:title="Bekleyen Talepler" />
+        android:icon="@drawable/question_mark_icon"
+        android:title="Bekleyen Talepler"/>
 
     <item
         android:id="@+id/navigation_ongoing"
-        android:icon="@drawable/ic_dots"
-        android:title="Devam Eden Talepler"  />
+        android:icon="@drawable/dots_icon"
+        android:title="Devam Eden Talepler"/>
 
     <item
         android:id="@+id/navigation_solved"
-        android:icon="@drawable/ic_check"
-        android:title="Çözülen Talepler"  />
+        android:icon="@drawable/check_icon"
+        android:title="Çözülen Talepler"/>
 
 </menu>

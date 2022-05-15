@@ -6,14 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".musteriTicketFollow">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="217dp"
-        android:text="Takip"
-        android:textSize="34sp"
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="200dp"
+        android:hint="Talep no"
+        android:fontFamily="@font/regular"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonticketsearch"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/BMLACI"
+        android:enabled="false"
+        android:text="Talebimi bul"
+        android:fontFamily="@font/bold"
+        android:textAllCaps="false"
+        android:textColor="@color/BMSARI"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
