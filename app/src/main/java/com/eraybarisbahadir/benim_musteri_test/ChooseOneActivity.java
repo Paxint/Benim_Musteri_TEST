@@ -12,6 +12,7 @@ import com.eraybarisbahadir.benim_musteri_test.ui.login.LoginActivity;
 
 public class ChooseOneActivity extends AppCompatActivity {
     private Button kurumLoginClick;
+    private Button musteriLoginClick;
 
 
     @Override
@@ -27,10 +28,20 @@ public class ChooseOneActivity extends AppCompatActivity {
             }
         });
 
+        musteriLoginClick = (Button) findViewById(R.id.buttonm1);
+        musteriLoginClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {openCustomerLogin();}
+        });
 
     }
     public void openCompanyLogin(){
         Intent intent=new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCustomerLogin(){
+        Intent intent=new Intent(this,CustomerChooseActivity.class);
         startActivity(intent);
     }
 

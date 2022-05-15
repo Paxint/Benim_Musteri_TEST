@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BMLACI"
+    android:background="@color/white"
     tools:context=".ChooseOneActivity">
 
     <ImageView
@@ -16,20 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:srcCompat="@drawable/choose_one_yellow" />
+        app:srcCompat="@drawable/choose_one_blue" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="18dp"
         android:layout_height="45dp"
         android:elevation="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonk1"
-        app:layout_constraintEnd_toEndOf="@+id/buttonk1"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonchoose1"
+        app:layout_constraintEnd_toEndOf="@+id/buttonchoose1"
         app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="@+id/buttonk1"
-        app:layout_constraintTop_toTopOf="@+id/buttonk1"
+        app:layout_constraintStart_toStartOf="@+id/buttonchoose1"
+        app:layout_constraintTop_toTopOf="@+id/buttonchoose1"
         app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/arrow_yellow"
+        app:srcCompat="@drawable/arrow_blue"
         tools:visibility="visible" />
 
     <ImageView
@@ -37,56 +37,56 @@
         android:layout_width="18dp"
         android:layout_height="45dp"
         android:elevation="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonm1"
-        app:layout_constraintEnd_toEndOf="@+id/buttonm1"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonmchoose2"
+        app:layout_constraintEnd_toEndOf="@+id/buttonmchoose2"
         app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="@+id/buttonm1"
-        app:layout_constraintTop_toTopOf="@+id/buttonm1"
+        app:layout_constraintStart_toStartOf="@+id/buttonmchoose2"
+        app:layout_constraintTop_toTopOf="@+id/buttonmchoose2"
         app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/arrow_yellow"
+        app:srcCompat="@drawable/arrow_blue"
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/buttonk1"
+        android:id="@+id/buttonchoose1"
         android:layout_width="320dp"
         android:layout_height="190dp"
         android:clickable="true"
         android:linksClickable="false"
         android:onClick="kurumLoginClick"
         android:paddingLeft="30dp"
-        android:text="Müşterim      için geldim"
+        android:text="Ticket    Oluştur"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
-        android:textColor="@color/BMSARI"
+        android:textColor="@color/BMLACI"
         android:textSize="34sp"
-        app:backgroundTint="@color/BMLACI"
+        app:backgroundTint="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475"
-        app:strokeColor="#FDE9C9"
+        app:layout_constraintVertical_bias="0.473"
+        app:strokeColor="@color/BMGRI"
         app:strokeWidth="2dp" />
 
     <Button
-        android:id="@+id/buttonm1"
+        android:id="@+id/buttonmchoose2"
         android:layout_width="320dp"
         android:layout_height="190dp"
         android:paddingLeft="30dp"
-        android:text="Müşteri               Benim"
+        android:text="Ticket      Takibi"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
-        android:textColor="@color/BMSARI"
+        android:textColor="@color/BMLACI"
         android:textSize="34sp"
-        app:backgroundTint="@color/BMLACI"
+        app:backgroundTint="@color/white"
         app:cornerRadius="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#FDE9C9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:strokeColor="@color/BMGRI"
         app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

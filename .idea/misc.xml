@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/drawable/saga_ok.xml" value="0.196" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout-w1240dp/activity_company_login.xml" value="0.23560910307898258" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_choose_one.xml" value="0.33" />
@@ -19,6 +20,33 @@
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.318" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.174" />
+        <entry key="app/src/main/res/drawable-v24/arrow_blue.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/arrow_blue.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/arrow_yellow.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/ic_dots.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/ic_question_mark.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/saga_ok.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/selector.xml" value="0.1585" />
+        <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1499330655957162" />
+        <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.14515027322404372" />
+        <entry key="app/src/main/res/layout/activity_choose_one.xml" value="0.23734893798828127" />
+        <entry key="app/src/main/res/layout/activity_customer_choose.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_customer_choose_one.xml" value="0.21427096805057014" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.15738677978515625" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.192481884057971" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2128623188405797" />
+        <entry key="app/src/main/res/layout/activity_ticket.xml" value="0.30378519694010414" />
+        <entry key="app/src/main/res/layout/fragment_open.xml" value="0.10364583333333334" />
+        <entry key="app/src/main/res/layout/fragment_solved.xml" value="0.10364583333333334" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.10364583333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1585" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1585" />
       </map>
     </option>
   </component>

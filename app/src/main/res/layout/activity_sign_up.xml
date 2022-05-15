@@ -31,7 +31,7 @@
         android:hint="Kurum Adı"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:textColorLink="#2D4059"
+        android:textColorLink="@color/BMLACI"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -60,7 +60,7 @@
         android:hint="Kurum E-posta"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:textColorLink="#2D4059"
+        android:textColorLink="@color/BMLACI"
         app:layout_constraintStart_toStartOf="@+id/username2"
         app:layout_constraintTop_toBottomOf="@+id/username2" />
 
@@ -73,7 +73,7 @@
         android:enabled="false"
         android:text="Kayıt Ol"
         android:textAllCaps="false"
-        android:textColor="#FDE9C9"
+        android:textColor="@color/BMSARI"
         android:textStyle="bold"
         android:visibility="visible"
         app:cornerRadius="15dp"
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Hesabınız mı var?"
-        android:textColor="#898b8a"
+        android:textColor="@color/BMGRI"
         app:layout_constraintEnd_toEndOf="@+id/login"
         app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -114,7 +114,7 @@
         android:background="#00FFFFFF"
         android:text="Giriş Yap"
         android:textAllCaps="false"
-        android:textColor="#1C54DB"
+        android:textColor="@color/BMLOGINMAVI"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

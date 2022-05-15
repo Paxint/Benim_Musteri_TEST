@@ -1,47 +1,52 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
+import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityTicketBinding;
 
 public class Tickets extends AppCompatActivity {
+
+     ActivityTicketBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_open);
+        binding = ActivityTicketBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new OpenFragment());
 
-        BottomNavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-                switch (item.getItemId()) {
-                    case R.id.navigation_open:
-                        selectedFragment = new OpenFragment();
-                        break;
-                    case R.id.navigation_ongoing:
-                        selectedFragment = new OngoingFragment();
-                        break;
-                    case R.id.navigation_solved:
-                        selectedFragment = new SolvedFragment();
-                        break;
+        binding.bottomNavigationView.setOnItemSelectedListener(item ->  {
 
-                }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            switch (item.getItemId()) {
+                case R.id.navigation_open:
+                    replaceFragment(new OpenFragment());
+                    break;
+                case R.id.navigation_ongoing:
+                    replaceFragment(new OngoingFragment());
+                    break;
+                case R.id.navigation_solved:
+                    replaceFragment(new SolvedFragment());
+                    break;
 
-                return true;
             }
 
+            return true;
+
         });
+    }
+
+    private void replaceFragment(Fragment fragment){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.commit();
+
+
     }
 }
