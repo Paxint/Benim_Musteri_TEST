@@ -12,7 +12,7 @@ public class musteriTicketFollow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_musteri_ticket_follow);
+        setContentView(R.layout.ticket_find);
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
