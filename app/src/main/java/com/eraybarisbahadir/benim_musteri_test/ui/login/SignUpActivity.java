@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -14,8 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -38,6 +41,16 @@ public class SignUpActivity extends AppCompatActivity {
 
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // Customize the back button
+        actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         kurumGiris = (Button) findViewById(R.id.buttongirisyap);
         kurumGiris.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +140,18 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+    // this event will enable the back
+    // function to the button on press
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void openCompanyLogin(){
         Intent intent=new Intent(this, LoginActivity.class);
         startActivity(intent);

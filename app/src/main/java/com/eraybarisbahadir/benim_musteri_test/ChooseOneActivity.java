@@ -20,6 +20,8 @@ public class ChooseOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_one);
 
+
+
         kurumLoginClick = (Button) findViewById(R.id.buttonk1);
         kurumLoginClick.setOnClickListener(new View.OnClickListener() {
             @Override
