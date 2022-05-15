@@ -45,7 +45,6 @@
         android:layout_marginTop="80dp"
         android:backgroundTint="@color/BMLACI"
         android:enabled="false"
-        android:onClick="blogin"
         android:text="Giriş"
         android:textAllCaps="false"
         android:textColor="@color/BMSARI"
