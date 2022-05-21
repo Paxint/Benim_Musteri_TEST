@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "935283539958",
+    "project_id": "benim-musteri",
+    "storage_bucket": "benim-musteri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935283539958:android:f7f542de2ad96d405591d7",
+        "android_client_info": {
+          "package_name": "com.eraybarisbahadir.benim_musteri_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935283539958-dc5996cs8g4v4l58rl6br09j487aeo6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE67jpVVNslKDKZbD5VIjobPYE_6HIfUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935283539958-dc5996cs8g4v4l58rl6br09j487aeo6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

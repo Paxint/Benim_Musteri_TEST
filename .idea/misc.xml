@@ -54,8 +54,10 @@
         <entry key="app/src/main/res/layout/fragment_solved.xml" value="0.10364583333333334" />
         <entry key="app/src/main/res/layout/register_success.xml" value="0.2995361328125" />
         <entry key="app/src/main/res/layout/sign_up_success.xml" value="0.16485507246376813" />
+        <entry key="app/src/main/res/layout/ticket_creation.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/ticket_creation_success.xml" value="0.16485507246376813" />
         <entry key="app/src/main/res/layout/ticket_edit_success.xml" value="0.16485507246376813" />
+        <entry key="app/src/main/res/layout/ticket_find.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35516408284505213" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1585" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1585" />
