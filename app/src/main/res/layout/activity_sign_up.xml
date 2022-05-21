@@ -9,10 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".kurum_sign_up">
 
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/reg_conpwd"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -22,11 +22,11 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintStart_toStartOf="@+id/reg_password"
+        app:layout_constraintTop_toBottomOf="@+id/reg_password" />
 
     <EditText
-        android:id="@+id/username2"
+        android:id="@+id/reg_name"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:hint="Kurum Adı"
@@ -34,7 +34,7 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:textColorLink="@color/BMLACI"
-        app:layout_constraintBottom_toTopOf="@+id/login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.281" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/reg_password"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -52,11 +52,11 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
-        app:layout_constraintStart_toStartOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintStart_toStartOf="@+id/reg_email"
+        app:layout_constraintTop_toBottomOf="@+id/reg_email" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/reg_email"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -65,53 +65,36 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:textColorLink="@color/BMLACI"
-        app:layout_constraintStart_toStartOf="@+id/username2"
-        app:layout_constraintTop_toBottomOf="@+id/username2" />
+        app:layout_constraintStart_toStartOf="@+id/reg_name"
+        app:layout_constraintTop_toBottomOf="@+id/reg_name" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btn_reg"
         android:layout_width="320dp"
         android:layout_height="55dp"
-        android:layout_gravity="start"
         android:backgroundTint="@color/BMLACI"
-        android:enabled="false"
         android:text="Kayıt Ol"
         android:fontFamily="@font/bold"
         android:textAllCaps="false"
         android:textColor="@color/BMSARI"
         android:textStyle="bold"
-        android:visibility="visible"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/username2"
+        app:layout_constraintStart_toStartOf="@+id/reg_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.79" />
 
-    <ProgressBar
-        android:id="@+id/loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="64dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/signin_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Hesabınız mı var?"
         android:fontFamily="@font/regular"
         android:textColor="@color/BMGRI"
-        app:layout_constraintEnd_toEndOf="@+id/login"
-        app:layout_constraintStart_toStartOf="@+id/login"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_reg"
+        app:layout_constraintStart_toStartOf="@+id/btn_reg"
+        app:layout_constraintTop_toBottomOf="@+id/btn_reg" />
 
     <Button
         android:id="@+id/buttongirisyap"
@@ -122,8 +105,8 @@
         android:fontFamily="@font/bold"
         android:textAllCaps="false"
         android:textColor="@color/BMLOGINMAVI"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/signin_view"
+        app:layout_constraintStart_toStartOf="@+id/signin_view"
+        app:layout_constraintTop_toBottomOf="@+id/signin_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

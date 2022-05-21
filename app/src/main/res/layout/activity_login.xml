@@ -9,10 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".kurum_login">
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/txt_pwd"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -22,8 +22,8 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
-        app:layout_constraintStart_toStartOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintStart_toStartOf="@+id/txt_email"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -36,28 +36,27 @@
         android:textColorHighlight="@color/BMKIRMIZI"
         android:textColorLink="@color/BMLACI"
         app:buttonTint="@color/BMLACI"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintStart_toStartOf="@+id/txt_pwd"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pwd" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btn_login"
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_gravity="start"
         android:layout_marginTop="80dp"
         android:backgroundTint="@color/BMLACI"
-        android:enabled="false"
         android:text="Giriş"
         android:fontFamily="@font/bold"
         android:textAllCaps="false"
         android:textColor="@color/BMSARI"
         android:textStyle="bold"
         app:cornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintStart_toStartOf="@+id/txt_email"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pwd" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/txt_email"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="160dp"
@@ -72,7 +71,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/loading"
+        android:id="@+id/prg_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -80,8 +79,8 @@
         android:layout_marginBottom="64dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/txt_pwd"
+        app:layout_constraintStart_toStartOf="@+id/txt_pwd"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
@@ -93,14 +92,13 @@
         android:text="Hesabınız yok mu?"
         android:fontFamily="@font/regular"
         android:textColor="@color/BMGRI"
-        app:layout_constraintEnd_toEndOf="@+id/login"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/login"
-        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
         tools:ignore="UnknownIdInLayout" />
 
     <Button
-        android:id="@+id/buttonkayitol"
+        android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
