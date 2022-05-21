@@ -7,8 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.eraybarisbahadir.benim_musteri_test.kurum_login;
-
 
 public class ChooseOneActivity extends AppCompatActivity {
     private Button kurumLoginClick;
@@ -38,7 +36,7 @@ public class ChooseOneActivity extends AppCompatActivity {
 
     }
     public void openCompanyLogin(){
-        Intent intent=new Intent(this, kurum_login.class);
+        Intent intent=new Intent(this, kurumLogin.class);
         startActivity(intent);
     }
 

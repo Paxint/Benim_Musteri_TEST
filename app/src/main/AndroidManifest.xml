@@ -9,10 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Benim_Musteri_TEST">
         <activity
-            android:name=".kurum_sign_up"
+            android:name=".kurumSignUp"
             android:exported="false" />
         <activity
-            android:name=".kurum_login"
+            android:name=".kurumLogin"
             android:exported="false" />
         <activity
             android:name=".musteriTicketCreate"

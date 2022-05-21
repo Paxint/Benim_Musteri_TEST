@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.eraybarisbahadir.benim_musteri_test.kurum_login;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -22,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class kurum_sign_up extends AppCompatActivity {
+public class kurumSignUp extends AppCompatActivity {
 
     Button reg_registration;
     EditText reg_name;
@@ -55,16 +54,16 @@ public class kurum_sign_up extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (reg_name.getText().toString().equals("")) {
-                    Toast.makeText(kurum_sign_up.this, "Please type a username", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(kurumSignUp.this, "Kurum adı boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else if (reg_email.getText().toString().equals("")) {
-                    Toast.makeText(kurum_sign_up.this, "Please type an email id", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(kurumSignUp.this, "E-posta boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else if (reg_password.getText().toString().equals("")) {
-                    Toast.makeText(kurum_sign_up.this, "Please type a password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(kurumSignUp.this, "Şifre boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else if (!reg_conf_pwd.getText().toString().equals(reg_password.getText().toString())) {
-                    Toast.makeText(kurum_sign_up.this, "Password mismatch", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(kurumSignUp.this, "Şifreler eşleşmiyor.", Toast.LENGTH_SHORT).show();
 
                 } else {
 
@@ -73,7 +72,7 @@ public class kurum_sign_up extends AppCompatActivity {
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                             if (documentSnapshot.exists()) {
-                                Toast.makeText(kurum_sign_up.this, "Sorry,this user exists", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(kurumSignUp.this, "Bu adrese kayıtlı bir hesap zaten var.", Toast.LENGTH_SHORT).show();
                             } else {
                                 Map<String, Object> reg_entry = new HashMap<>();
                                 reg_entry.put("Name", reg_name.getText().toString());
@@ -86,13 +85,13 @@ public class kurum_sign_up extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
-                                                Toast.makeText(kurum_sign_up.this, "Successfully added", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(kurumSignUp.this, "Kayıt başarılı!", Toast.LENGTH_SHORT).show();
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Log.d("Error", e.getMessage());
+                                                Log.d("Hata!", e.getMessage());
                                             }
                                         });
                             }
@@ -104,7 +103,7 @@ public class kurum_sign_up extends AppCompatActivity {
                 signin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(kurum_sign_up.this, kurum_login.class);
+                        Intent intent = new Intent(kurumSignUp.this, kurumLogin.class);
                         startActivity(intent);
                     }
         });

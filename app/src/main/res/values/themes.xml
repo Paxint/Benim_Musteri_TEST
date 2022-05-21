@@ -15,8 +15,7 @@
     </style>
 
     <style name="BottomNavigationViewTextStyle">
-        ...
         <item name="android:fontFamily">@font/regular</item>
-        ...
     </style>
+
 </resources>

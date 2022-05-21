@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,17 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import javax.annotation.Nullable;
-
-public class kurum_login extends AppCompatActivity implements View.OnClickListener{
+public class kurumLogin extends AppCompatActivity implements View.OnClickListener{
 
     Button login;
     Button register;
@@ -53,9 +47,9 @@ public class kurum_login extends AppCompatActivity implements View.OnClickListen
             switch(v.getId()){
                 case R.id.btn_login:
                     if(email.getText().toString().equals("")){
-                        Toast.makeText(kurum_login.this, "Please enter valid email", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(kurumLogin.this, "E-posta boş bırakılamaz.", Toast.LENGTH_SHORT).show();
                     }else if( pwd.getText().toString().equals("")){
-                        Toast.makeText(kurum_login.this, "Please enter valid password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(kurumLogin.this, "Şifre boş bırakılamaz.", Toast.LENGTH_SHORT).show();
                     }
                     db.collection("kurum")
                             .get()
@@ -69,19 +63,21 @@ public class kurum_login extends AppCompatActivity implements View.OnClickListen
                                             String a1=email.getText().toString().trim();
                                             String b1=pwd.getText().toString().trim();
                                             if(a.equalsIgnoreCase(a1) & b.equalsIgnoreCase(b1)) {
-                                                Intent home = new Intent(kurum_login.this, Tickets.class);
+                                                Intent home = new Intent(kurumLogin.this, Tickets.class);
                                                 startActivity(home);
-                                                Toast.makeText(kurum_login.this, "Logged In", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(kurumLogin.this, "Giriş başarılı!", Toast.LENGTH_SHORT).show();
                                                 break;
-                                            }else
-                                                Toast.makeText(kurum_login.this, "Cannot login,incorrect Email and Password", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            else
+                                                Toast.makeText(kurumLogin.this, "Giriş başarısız, e-posta ya da şifre yanlış.", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
                             });
                     break;
                 case R.id.btn_register:
-                    Intent register_view=new Intent(kurum_login.this,kurum_sign_up.class);
+                    Intent register_view=new Intent(kurumLogin.this, kurumSignUp.class);
                     startActivity(register_view);
                     break;
             }
