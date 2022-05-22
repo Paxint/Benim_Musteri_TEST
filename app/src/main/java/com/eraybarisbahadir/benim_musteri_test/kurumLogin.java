@@ -1,8 +1,5 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -71,6 +71,7 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
 
                                             else
                                                 Toast.makeText(kurumLogin.this, "Giriş başarısız, e-posta ya da şifre yanlış.", Toast.LENGTH_SHORT).show();
+                                            break;
                                         }
                                     }
                                 }
