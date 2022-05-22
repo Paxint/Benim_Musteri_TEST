@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -15,28 +14,60 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.List;
-
 public class musteriTicketCreate extends AppCompatActivity {
 
-    Kurum newClassObj= new Kurum();
-    String[] items= newClassObj.getNameArray();
+
+
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapterItems;
+    FirebaseFirestore db;
+    String [] items={};
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ticket_creation);
+        
+        
+
+        db = FirebaseFirestore.getInstance();
+        db.collection("kurum")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("", document.getId() + " => " + document.getData());
+                                String name =document.getString("Name");
+                                String name1=autoCompleteTxt.getText().toString().trim();
+                                if (name.equalsIgnoreCase(name1)){
+
+
+
+                                }
+
+
+
+                            }
+                        } else {
+                            Log.d("" ,"Error getting documents: ", task.getException());
+                        }
+
+                      
+                    }
+                });
+        
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
+
 
         // Customize the back button
         actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
@@ -67,4 +98,5 @@ public class musteriTicketCreate extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
