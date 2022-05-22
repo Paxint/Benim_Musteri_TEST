@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <EditText
         android:id="@+id/reg_password"
@@ -95,7 +95,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/reg_name"
         app:layout_constraintTop_toBottomOf="@+id/reg_conpwd"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintVertical_bias="0.122" />
 
     <TextView
         android:id="@+id/signin"

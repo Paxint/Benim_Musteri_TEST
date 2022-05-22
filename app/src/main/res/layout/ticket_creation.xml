@@ -7,13 +7,115 @@
     tools:context=".musteriTicketCreate">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="186dp"
-        android:layout_height="169dp"
-        android:layout_marginTop="186dp"
-        android:layout_marginEnd="95dp"
-        android:text="YARAT"
-        android:textSize="34sp"
+        android:id="@+id/txt_eposta_tel"
+        android:layout_width="310dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/bold"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="E-posta/Telefon:"
+        android:textColor="@color/BMGRI"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_eposta_tel"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/regular"
+        android:hint="ornek@mail.com"
+        android:inputType="textPersonName"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintStart_toStartOf="@+id/txt_eposta_tel"
+        app:layout_constraintTop_toBottomOf="@+id/txt_eposta_tel" />
+
+    <TextView
+        android:id="@+id/txt_kurum"
+        android:layout_width="310dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="Kurum:"
+        android:textStyle="bold"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/BMGRI"
+        app:layout_constraintStart_toStartOf="@+id/input_eposta_tel"
+        app:layout_constraintTop_toBottomOf="@+id/input_eposta_tel" />
+
+    <EditText
+        android:id="@+id/input_konu"
+        android:layout_width="310dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_input"
+        android:fontFamily="@font/regular"
+        android:gravity="top|left"
+        android:hint="Lütfen konuyu açıklayınız..."
+        android:inputType="textPersonName"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_eposta_tel"
+        app:layout_constraintStart_toStartOf="@+id/txt_eposta_tel"
+        app:layout_constraintTop_toBottomOf="@+id/txt_konu" />
+
+    <TextView
+        android:id="@+id/txt_konu"
+        android:layout_width="310dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="Konu:"
+        android:textStyle="bold"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/BMGRI"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:hint="@string/select"
+        app:layout_constraintStart_toStartOf="@+id/txt_kurum"
+        app:layout_constraintTop_toBottomOf="@+id/txt_kurum">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:inputType="none"
+            android:fontFamily="@font/regular"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_ticket_send"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/BMLACI"
+        android:fontFamily="@font/bold"
+        android:text="Gönder"
+        android:textAllCaps="false"
+        android:textColor="@color/BMSARI"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/input_konu"
+        app:layout_constraintTop_toBottomOf="@+id/input_konu"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

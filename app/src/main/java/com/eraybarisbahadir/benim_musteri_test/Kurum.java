@@ -1,14 +1,14 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-public class Kurum {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Kurum extends AppCompatActivity {
 
     String name;
     String email;
     String password;
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getEmail() {
         return email;
@@ -18,4 +18,9 @@ public class Kurum {
         return password;
     }
 
+    private String[] nameArray={name};
+
+    public String[] getNameArray() {
+        return nameArray;
+    }
 }
