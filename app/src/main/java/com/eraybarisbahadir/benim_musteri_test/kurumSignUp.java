@@ -1,8 +1,5 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,6 +24,7 @@ import java.util.Map;
 public class kurumSignUp extends AppCompatActivity {
 
     Button reg_registration;
+    Button buttongirisyap;
     EditText reg_name;
     EditText reg_email;
     EditText reg_password;
@@ -107,5 +108,6 @@ public class kurumSignUp extends AppCompatActivity {
                         startActivity(intent);
                     }
         });
+
     }
 }

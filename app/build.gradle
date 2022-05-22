@@ -9,6 +9,7 @@ android {
     defaultConfig {
         applicationId "com.eraybarisbahadir.benim_musteri_test"
         minSdk 19
+        multiDexEnabled true
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -39,6 +40,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.annotation:annotation:1.3.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'

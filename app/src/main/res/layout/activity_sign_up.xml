@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.253" />
 
     <TextView
-        android:id="@+id/signin_view"
+        android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_reg" />
 
     <Button
-        android:id="@+id/buttongirisyap"
+        android:id="@+id/signin_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
@@ -119,8 +119,8 @@
         android:fontFamily="@font/bold"
         android:textAllCaps="false"
         android:textColor="@color/BMLOGINMAVI"
-        app:layout_constraintEnd_toEndOf="@+id/signin_view"
-        app:layout_constraintStart_toStartOf="@+id/signin_view"
-        app:layout_constraintTop_toBottomOf="@+id/signin_view" />
+        app:layout_constraintEnd_toEndOf="@+id/signin"
+        app:layout_constraintStart_toStartOf="@+id/signin"
+        app:layout_constraintTop_toBottomOf="@+id/signin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
