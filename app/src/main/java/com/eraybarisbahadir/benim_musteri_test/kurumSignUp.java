@@ -2,7 +2,6 @@ package com.eraybarisbahadir.benim_musteri_test;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,16 +11,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.eraybarisbahadir.benim_musteri_test.databinding.ActivitySignUpBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class kurumSignUp extends AppCompatActivity {
+    private ActivitySignUpBinding binding;
 
     Button reg_registration;
     Button buttongirisyap;
@@ -37,13 +36,18 @@ public class kurumSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        binding = ActivitySignUpBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
         reg_registration = findViewById(R.id.btn_reg);
         reg_name = findViewById(R.id.reg_name);
         reg_email = findViewById(R.id.reg_email);
         reg_password = findViewById(R.id.reg_password);
         reg_conf_pwd = findViewById(R.id.reg_conpwd);
         signin=findViewById(R.id.signin_view);
+        FirebaseAuth auth;
+        auth = FirebaseAuth.getInstance();
 
 
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -67,37 +71,25 @@ public class kurumSignUp extends AppCompatActivity {
                     Toast.makeText(kurumSignUp.this, "Şifreler eşleşmiyor.", Toast.LENGTH_SHORT).show();
 
                 } else {
+                        String email=binding.regEmail.getText().toString();
+                        String pass=binding.regPassword.getText().toString();
 
-                    ref.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    auth.createUserWithEmailAndPassword(email,pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(kurumSignUp.this,"Başarıyla kayıt olundu!",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(kurumSignUp.this,Tickets.class);
+                            startActivity(intent);
+                            finish();
 
-                            if (documentSnapshot.exists()) {
-                                Toast.makeText(kurumSignUp.this, "Bu adrese kayıtlı bir hesap zaten var.", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Map<String, Object> reg_entry = new HashMap<>();
-                                reg_entry.put("Name", reg_name.getText().toString());
-                                reg_entry.put("Email", reg_email.getText().toString());
-                                reg_entry.put("Password", reg_password.getText().toString());
-
-                                //   String myId = ref.getId();
-                                firebaseFirestore.collection("kurum")
-                                        .add(reg_entry)
-                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                            @Override
-                                            public void onSuccess(DocumentReference documentReference) {
-                                                Toast.makeText(kurumSignUp.this, "Kayıt başarılı!", Toast.LENGTH_SHORT).show();
-                                            }
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.d("Hata!", e.getMessage());
-                                            }
-                                        });
-                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(kurumSignUp.this,e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
                         }
                     });
+
                 }
             }
         });

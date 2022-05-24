@@ -12,11 +12,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityLoginBinding;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class kurumLogin extends AppCompatActivity implements View.OnClickListener{
 
@@ -26,11 +27,16 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
     TextView email;
     ProgressBar progress;
     FirebaseFirestore db;
+    private FirebaseAuth auth;
+    private ActivityLoginBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         email = findViewById(R.id.txt_email);
         pwd = findViewById(R.id.txt_pwd);
@@ -41,41 +47,39 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         db = FirebaseFirestore.getInstance();
         login.setOnClickListener(this);
         register.setOnClickListener(this);
+        auth=FirebaseAuth.getInstance();
+
+
+
 
     }
         public void onClick(View v){
             switch(v.getId()){
                 case R.id.btn_login:
-                    if(email.getText().toString().equals("")){
-                        Toast.makeText(kurumLogin.this, "E-posta boş bırakılamaz.", Toast.LENGTH_SHORT).show();
-                    }else if( pwd.getText().toString().equals("")){
-                        Toast.makeText(kurumLogin.this, "Şifre boş bırakılamaz.", Toast.LENGTH_SHORT).show();
-                    }
-                    db.collection("kurum")
-                            .get()
-                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                    if(task.isSuccessful()){
-                                        for(QueryDocumentSnapshot doc : task.getResult()){
-                                            String a=doc.getString("Email");
-                                            String b=doc.getString("Password");
-                                            String a1=email.getText().toString().trim();
-                                            String b1=pwd.getText().toString().trim();
-                                            if(a.equalsIgnoreCase(a1) & b.equalsIgnoreCase(b1)) {
-                                                Intent home = new Intent(kurumLogin.this, Tickets.class);
-                                                startActivity(home);
-                                                Toast.makeText(kurumLogin.this, "Giriş başarılı!", Toast.LENGTH_SHORT).show();
-                                                break;
-                                            }
+                    String loginmailcheck = binding.txtEmail.getText().toString();
+                    String loginpasscheck= binding.txtPwd.getText().toString();
 
-                                            else
-                                                Toast.makeText(kurumLogin.this, "Giriş başarısız, e-posta ya da şifre yanlış.", Toast.LENGTH_SHORT).show();
-                                            break;
-                                        }
-                                    }
-                                }
-                            });
+                    if (loginmailcheck.equals("")|| loginpasscheck.equals((""))){
+                    Toast.makeText(this,"E-posta veya şifre boş bırakılamaz!",Toast.LENGTH_SHORT).show();
+                    } else {
+                    auth.signInWithEmailAndPassword(loginmailcheck,loginpasscheck).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(kurumLogin.this, "Başarıyla giriş yapıldı", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(kurumLogin.this, Tickets.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(kurumLogin.this,e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    }
                     break;
                 case R.id.btn_register:
                     Intent register_view=new Intent(kurumLogin.this, kurumSignUp.class);
