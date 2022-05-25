@@ -1,5 +1,6 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,8 +72,6 @@ public class musteriTicketCreate extends AppCompatActivity {
 
 
         ref = firebaseFirestore.collection("ticket").document();
-
-
         btn_ticket_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +106,9 @@ public class musteriTicketCreate extends AppCompatActivity {
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Toast.makeText(musteriTicketCreate.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT).show();
                                                 UUID ticketNumber =UUID.randomUUID();
+                                                Intent basariliticket = new Intent(musteriTicketCreate.this,Tickets.class);
+                                                startActivity(basariliticket);
+                                                finish();
 
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
