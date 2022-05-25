@@ -52,8 +52,13 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
 
 
 
+
+
     }
-        public void onClick(View v){
+
+
+
+            public void onClick(View v){
             switch(v.getId()){
                 case R.id.btn_login:
                     String loginmailcheck = binding.txtEmail.getText().toString();
@@ -86,6 +91,7 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
                     startActivity(register_view);
                     break;
             }
+
 
         }
 }

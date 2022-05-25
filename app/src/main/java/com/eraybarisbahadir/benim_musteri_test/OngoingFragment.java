@@ -1,12 +1,11 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +13,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class OngoingFragment extends Fragment {
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +27,9 @@ public class OngoingFragment extends Fragment {
 
     public OngoingFragment() {
         // Required empty public constructor
+
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -46,6 +49,7 @@ public class OngoingFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +57,9 @@ public class OngoingFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
