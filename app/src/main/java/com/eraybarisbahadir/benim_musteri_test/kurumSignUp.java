@@ -27,7 +27,7 @@ public class kurumSignUp extends AppCompatActivity {
     private ActivitySignUpBinding binding;
 
     Button reg_registration;
-    Button buttongirisyap;
+    Button signin_view;
     EditText reg_name;
     EditText reg_email;
     EditText reg_password;
@@ -49,7 +49,8 @@ public class kurumSignUp extends AppCompatActivity {
         reg_email = findViewById(R.id.reg_email);
         reg_password = findViewById(R.id.reg_password);
         reg_conf_pwd = findViewById(R.id.reg_conpwd);
-        signin = findViewById(R.id.signin_view);
+        signin = findViewById(R.id.signin);
+        signin_view=findViewById(R.id.signin_view);
         FirebaseAuth auth;
         auth = FirebaseAuth.getInstance();
 
@@ -117,7 +118,7 @@ public class kurumSignUp extends AppCompatActivity {
                         }
                     });
                 }
-                signin.setOnClickListener(new View.OnClickListener() {
+                signin_view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(kurumSignUp.this, kurumLogin.class);

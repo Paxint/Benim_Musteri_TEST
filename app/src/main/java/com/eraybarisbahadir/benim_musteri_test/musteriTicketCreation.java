@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityMusteriTicketCreationBinding;
 import com.eraybarisbahadir.benim_musteri_test.model.Kurum;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,57 +34,48 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class musteriTicketCreate extends AppCompatActivity {
-
-
+public class musteriTicketCreation extends AppCompatActivity {
 
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapterItems;
     private FirebaseFirestore firebaseFirestore;
     ArrayList<Kurum> kurumArrayList;
     DocumentReference ref;
-
     Button btn_ticket_send;
     EditText input_eposta_tel;
     EditText input_konu;
-
-
+    TextView ticketNumber;
     List<String> tempname = new ArrayList<String>();
-
-
-
+    ActivityMusteriTicketCreationBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ticket_creation);
+        binding = ActivityMusteriTicketCreationBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         kurumArrayList = new ArrayList<>();
         getData();
-
-
         btn_ticket_send = findViewById(R.id.btn_ticket_send);
-        autoCompleteTxt=findViewById(R.id.auto_complete_txt);
-        input_konu=findViewById(R.id.input_konu);
-        input_eposta_tel=findViewById(R.id.input_eposta_tel);
-        int ticketNumber = (int)UUID.randomUUID().getLeastSignificantBits();
-
-
-
-
+        autoCompleteTxt = findViewById(R.id.auto_complete_txt);
+        input_konu = findViewById(R.id.input_konu);
+        input_eposta_tel = findViewById(R.id.input_eposta_tel);
+        int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
 
         ref = firebaseFirestore.collection("ticket").document();
-        btn_ticket_send.setOnClickListener(new View.OnClickListener() {
+        binding.btnTicketSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (input_eposta_tel.getText().toString().equals("")) {
-                    Toast.makeText(musteriTicketCreate.this, "E-posta boş bırakılamaz.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(musteriTicketCreation.this, "E-posta boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else if (autoCompleteTxt.getText().toString().equals("")) {
-                    Toast.makeText(musteriTicketCreate.this, "Kurum boş bırakılamaz.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(musteriTicketCreation.this, "Kurum boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else if (input_konu.getText().toString().equals("")) {
-                    Toast.makeText(musteriTicketCreate.this, "Konu boş bırakılamaz.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(musteriTicketCreation.this, "Konu boş bırakılamaz.", Toast.LENGTH_SHORT).show();
 
                 } else {
 
@@ -91,30 +84,33 @@ public class musteriTicketCreate extends AppCompatActivity {
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                             if (documentSnapshot.exists()) {
-                                Toast.makeText(musteriTicketCreate.this, "Bu talep oluşturulamaz lütfen bilgileri kontrol ediniz.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(musteriTicketCreation.this, "Bu talep oluşturulamaz lütfen bilgileri kontrol ediniz.", Toast.LENGTH_LONG).show();
                             } else {
                                 Map<String, Object> reg_entry = new HashMap<>();
                                 reg_entry.put("Detay", input_eposta_tel.getText().toString());
                                 reg_entry.put("Konu", input_konu.getText().toString());
                                 reg_entry.put("Kurum", autoCompleteTxt.getText().toString());
-                                reg_entry.put("ID",ticketNumber);
+                                reg_entry.put("ID", ticketNumber);
 
                                 firebaseFirestore.collection("ticket")
                                         .add(reg_entry)
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
-                                                Toast.makeText(musteriTicketCreate.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT).show();
-                                                UUID ticketNumber =UUID.randomUUID();
-                                                Intent basariliticket = new Intent(musteriTicketCreate.this,Tickets.class);
-                                                startActivity(basariliticket);
+                                                Toast.makeText(musteriTicketCreation.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT).show();
+                                                UUID ticketNumberL = UUID.randomUUID();
+                                                String ticketNum = ticketNumberL.toString();
+
+                                                Intent yolla = new Intent(musteriTicketCreation.this, TicketCreationSuccess.class);
+                                                yolla.putExtra(ticketNum,ticketNum);
+                                                startActivity(yolla);
                                                 finish();
 
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(musteriTicketCreate.this,"HATA!",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(musteriTicketCreation.this, "HATA!", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                             }
@@ -123,10 +119,6 @@ public class musteriTicketCreate extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
 
@@ -138,7 +130,7 @@ public class musteriTicketCreate extends AppCompatActivity {
 
         //here I put kurum list codes
         autoCompleteTxt = findViewById(R.id.auto_complete_txt);
-        adapterItems = new ArrayAdapter<String>(this,R.layout.kurum_list,tempname);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.kurum_list, tempname);
         autoCompleteTxt.setAdapter(adapterItems);
         autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -159,13 +151,15 @@ public class musteriTicketCreate extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     private void getData() {
         firebaseFirestore.collection("kurum").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
                 if (error != null) {
-                    Toast.makeText(musteriTicketCreate.this, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(musteriTicketCreation.this, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
                 if (value != null) {
                     for (DocumentSnapshot snapshot : value.getDocuments()) {

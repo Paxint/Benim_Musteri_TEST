@@ -9,39 +9,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Benim_Musteri_TEST">
         <activity
-            android:name=".kurumSignUp"
+            android:name=".TicketCreationSuccess"
+            android:exported="false"
+            android:label="Ticket YARATILDI" />
+        <activity
+            android:name=".musteriTicketCreation"
             android:exported="false" />
         <activity
-            android:name=".kurumLogin"
-            android:exported="false" />
-        <activity
-            android:name=".musteriTicketCreate"
-            android:exported="false" />
-        <activity
-            android:name=".musteriTicketFollow"
+            android:name=".ChooseOneActivity"
             android:exported="false" />
         <activity
             android:name=".CustomerChooseActivity"
             android:exported="false" />
         <activity
+            android:name=".kurumLogin"
+            android:exported="false" />
+        <activity
+            android:name=".kurumSignUp"
+            android:exported="false" />
+        <activity
+            android:name=".musteriTicketCreate"
+            android:exported="false"
+            android:label="Talep Oluştur" />
+        <activity
+            android:name=".musteriTicketFollow"
+            android:exported="false" />
+        <activity
             android:name=".Tickets"
             android:exported="false"
             android:label="@string/title_activity_tickets" />
-        <activity
-            android:name=".ui.login.SignUpActivity"
-            android:exported="false"
-            android:label="@string/title_activity_sign_up" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name=".ui.login.CompanyLogin"
-            android:exported="false"
-            android:label="@string/title_activity_company_login" />
-        <activity
-            android:name=".ChooseOneActivity"
-            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

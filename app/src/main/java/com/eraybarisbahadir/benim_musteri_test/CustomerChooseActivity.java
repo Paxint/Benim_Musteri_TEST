@@ -59,7 +59,7 @@ public class CustomerChooseActivity extends AppCompatActivity {
     }
 
     public void openMusteriTicketCreatePage(){
-        Intent intent=new Intent(this, musteriTicketCreate.class);
+        Intent intent=new Intent(this, musteriTicketCreation.class);
         startActivity(intent);
     }
     public void openMusteriTicketFollowPage(){
