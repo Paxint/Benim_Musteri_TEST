@@ -4,12 +4,15 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityTicketBinding;
 import com.eraybarisbahadir.benim_musteri_test.model.Talep;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
@@ -19,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -30,6 +34,9 @@ public class OpenFragment extends Fragment {
 
 
     private FirebaseFirestore firebaseFirestore;
+    ArrayList<Talep> talepArrayList;
+    //private ActivityTicketBinding binding;
+    private RecyclerView recyclerView;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -66,21 +73,34 @@ public class OpenFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //binding = ActivityTicketBinding.inflate(getLayoutInflater());
+        //View view = binding.getRoot();
+        //setContentView(view);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        talepArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         getticketData();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_open, container, false);
+
+        recyclerView = view.findViewById(R.id.recycler_view_ticket);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(new TalepAdapter(talepArrayList));
+
     }
 
     private void getticketData() {
@@ -102,7 +122,7 @@ public class OpenFragment extends Fragment {
                         Timestamp date = (Timestamp) data.get("Date");
 
                         Talep talep = new Talep(ticket_id,user_email,details,date);
-
+                        talepArrayList.add(talep);
 
                     }
 

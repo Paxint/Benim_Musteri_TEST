@@ -4,10 +4,10 @@ import com.google.firebase.Timestamp;
 
 public class Talep {
 
-    String ticket_id;
-    String user_email;
-    String details;
-    Timestamp date;
+    public String ticket_id;
+    public String user_email;
+    public String details;
+    public Timestamp date;
 
     public Talep(String ticket_id, String user_email, String details, Timestamp date) {
         this.ticket_id = ticket_id;
