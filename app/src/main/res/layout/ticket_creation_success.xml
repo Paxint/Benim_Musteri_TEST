@@ -8,29 +8,71 @@
 
     <TextView
         android:id="@+id/txt_ticket_success"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/bold"
+        android:lineSpacingExtra="5sp"
         android:text="Talep gönderildi! Lütfen talep numaranızı kaybetmeyiniz."
         android:textAlignment="center"
         android:textColor="@color/BMLACI"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <ImageView
-        android:id="@+id/success_image"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="237dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_ticket_success"
+        android:id="@+id/success_img"
+        android:layout_width="350dp"
+        android:layout_height="285.95dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_ticket_success"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ticket_success" />
+
+    <TextView
+        android:id="@+id/txt_ticket_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Talep No:"
+        android:textAlignment="center"
+        android:textColor="@color/BMLACI"
+        android:fontFamily="@font/bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/success_img"
+        app:layout_constraintEnd_toEndOf="@+id/success_img"
+        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintStart_toStartOf="@+id/success_img"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ticket_success"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
+        android:id="@+id/txt_ticket_no_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="num"
+        android:textAlignment="center"
+        android:textColor="@color/BMLACI"
+        android:fontFamily="@font/bold"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_ticket_no"
+        app:layout_constraintStart_toStartOf="@+id/txt_ticket_no"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ticket_no" />
+
+    <ImageButton
+        android:id="@+id/btn_forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="-15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/forward_arrow_circle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
