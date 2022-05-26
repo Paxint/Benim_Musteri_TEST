@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Benim_Musteri_TEST">
         <activity
+            android:name=".TicketDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".TicketCreationSuccess"
             android:exported="false"
             android:label="Ticket YARATILDI" />
@@ -27,7 +30,6 @@
         <activity
             android:name=".kurumSignUp"
             android:exported="false" />
-
         <activity
             android:name=".musteriTicketFollow"
             android:exported="false" />
