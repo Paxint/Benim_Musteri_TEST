@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.eraybarisbahadir.benim_musteri_test.model.Talep;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,10 +29,11 @@ import java.util.Map;
 public class OpenFragment extends Fragment {
 
 
-    private FirebaseFirestore firebaseFirestore;
+    FirebaseFirestore firebaseFirestore;
+    RecyclerView recyclerView;
 
-    List<Talep> talepArrayList = new ArrayList<Talep>();
-    String[] talepArray = talepArrayList.toArray(new String[0]);
+    List<Talep> itemList = new ArrayList<>();
+
 
 
 
@@ -69,101 +68,44 @@ public class OpenFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
 
 
-
-        }
-
-
-    }
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_open,container,false);
-        getticketData();
 
         firebaseFirestore = FirebaseFirestore.getInstance();
-        talepArrayList = new ArrayList<Talep>();
-        RecyclerView rv = new RecyclerView(getContext());
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setAdapter(new TalepAdapter(talepArray));
-        return rv;
+
+        recyclerView=view.findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        //getticketData();
+        recyclerView.setAdapter(new ItemAdapter(getticketData(),getContext()));
+
+        return view;
     }
 
-
-    public class TalepAdapter extends RecyclerView.Adapter<TalepHolder> {
-        private String[] dataSource;
-        public TalepAdapter(String[] dataArgs){
-            dataSource = dataArgs;
-        }
-
-        @Override
-        public TalepHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = new TextView(parent.getContext());
-            TalepHolder viewHolder = new TalepHolder(view);
-            return viewHolder;
-        }
-
-        @Override
-        public void onBindViewHolder(TalepHolder holder, int position) {
-            holder.recycler_view_ticket.setText(dataSource[position]);
-        }
-
-        @Override
-        public int getItemCount() {
-            return dataSource.length;
-        }
-    }
-
-    public static class TalepHolder extends RecyclerView.ViewHolder{
-        public TextView recycler_view_ticket;
-        public TalepHolder(View itemView) {
-            super(itemView);
-            recycler_view_ticket = (TextView) itemView;
-        }
-    }
-
-
-
-    private void getticketData() {
+    private List<Talep> getticketData() {
         firebaseFirestore.collection("talep").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-
                 if (error != null) {
-
                 }
                 if (value != null) {
                     for (DocumentSnapshot snapshot : value.getDocuments()) {
-                        Map<String, Object> data = snapshot.getData();
-
+                        Map<String, Object> dataK = snapshot.getData();
                         // Zorunlu casting yapıldı
-                        String ticket_id = (String) data.get("ID");
-                        String user_email = (String) data.get("Email");
-                        String details = (String) data.get("Detail");
-                        Timestamp date = (Timestamp) data.get("Date");
-
-                        Talep talep = new Talep(ticket_id,user_email,details,date);
-                        talepArrayList.add(talep);
-
+                        String ticket_id = String.valueOf(dataK.get("ID"));
+                        String user_email = (String) dataK.get("Email");
+                        String details = (String) dataK.get("Detail");
+                        Talep talep = new Talep(ticket_id,user_email,details);
+                        itemList.add(talep);
                     }
-
                     }
 
         }
-
-
                 });
-
-
-
+return itemList;
         };
-
 }

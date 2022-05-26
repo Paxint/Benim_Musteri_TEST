@@ -27,10 +27,7 @@
         <activity
             android:name=".kurumSignUp"
             android:exported="false" />
-        <activity
-            android:name=".musteriTicketCreate"
-            android:exported="false"
-            android:label="Talep Oluştur" />
+
         <activity
             android:name=".musteriTicketFollow"
             android:exported="false" />
