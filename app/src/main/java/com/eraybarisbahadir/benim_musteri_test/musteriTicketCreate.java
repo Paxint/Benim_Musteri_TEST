@@ -1,5 +1,6 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class musteriTicketCreate extends AppCompatActivity {
 
@@ -63,14 +65,13 @@ public class musteriTicketCreate extends AppCompatActivity {
         autoCompleteTxt=findViewById(R.id.auto_complete_txt);
         input_konu=findViewById(R.id.input_konu);
         input_eposta_tel=findViewById(R.id.input_eposta_tel);
+        int ticketNumber = (int)UUID.randomUUID().getLeastSignificantBits();
 
 
 
 
 
         ref = firebaseFirestore.collection("ticket").document();
-
-
         btn_ticket_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +97,7 @@ public class musteriTicketCreate extends AppCompatActivity {
                                 reg_entry.put("Detay", input_eposta_tel.getText().toString());
                                 reg_entry.put("Konu", input_konu.getText().toString());
                                 reg_entry.put("Kurum", autoCompleteTxt.getText().toString());
+                                reg_entry.put("ID",ticketNumber);
 
                                 firebaseFirestore.collection("ticket")
                                         .add(reg_entry)
@@ -103,6 +105,10 @@ public class musteriTicketCreate extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Toast.makeText(musteriTicketCreate.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT).show();
+                                                UUID ticketNumber =UUID.randomUUID();
+                                                Intent basariliticket = new Intent(musteriTicketCreate.this,Tickets.class);
+                                                startActivity(basariliticket);
+                                                finish();
 
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
