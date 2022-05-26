@@ -44,7 +44,7 @@ public class Tickets extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.recycler_view_ticket,fragment);
         fragmentTransaction.commit();
 
 

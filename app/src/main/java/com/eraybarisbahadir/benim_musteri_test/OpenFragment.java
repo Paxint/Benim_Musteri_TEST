@@ -1,22 +1,18 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityTicketBinding;
 import com.eraybarisbahadir.benim_musteri_test.model.Talep;
 import com.google.firebase.Timestamp;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,8 +32,8 @@ public class OpenFragment extends Fragment {
 
 
     private FirebaseFirestore firebaseFirestore;
-    ArrayList<Talep> talepArrayList;
-    List<String> talep = new ArrayList<String>();
+
+    List<Talep> talepArrayList = new ArrayList<Talep>();
     String[] talepArray = talepArrayList.toArray(new String[0]);
 
 
@@ -80,6 +76,9 @@ public class OpenFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+
         }
 
 
@@ -90,9 +89,8 @@ public class OpenFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_open,container,false);
         getticketData();
 
-        talepArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
-
+        talepArrayList = new ArrayList<Talep>();
         RecyclerView rv = new RecyclerView(getContext());
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(new TalepAdapter(talepArray));

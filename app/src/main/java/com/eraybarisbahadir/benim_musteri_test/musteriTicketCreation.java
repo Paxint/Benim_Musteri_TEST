@@ -57,11 +57,11 @@ public class musteriTicketCreation extends AppCompatActivity {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         kurumArrayList = new ArrayList<>();
-        getData();
         btn_ticket_send = findViewById(R.id.btn_ticket_send);
         autoCompleteTxt = findViewById(R.id.auto_complete_txt);
         input_konu = findViewById(R.id.input_konu);
         input_eposta_tel = findViewById(R.id.input_eposta_tel);
+        getData();
         int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
 
         ref = firebaseFirestore.collection("talep").document();
