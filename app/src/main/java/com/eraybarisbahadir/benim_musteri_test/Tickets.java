@@ -1,7 +1,9 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -38,7 +40,27 @@ public class Tickets extends AppCompatActivity {
             return true;
 
         });
+
     }
+/*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.user_profile:
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+ */
 
     private void replaceFragment(Fragment fragment){
 

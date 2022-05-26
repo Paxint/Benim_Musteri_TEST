@@ -78,7 +78,6 @@ public class OpenFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         recyclerView=view.findViewById(R.id.recycler);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         //getticketData();
         recyclerView.setAdapter(new ItemAdapter(getticketData(),getContext()));
