@@ -64,7 +64,7 @@ public class musteriTicketCreation extends AppCompatActivity {
         input_eposta_tel = findViewById(R.id.input_eposta_tel);
         int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
 
-        ref = firebaseFirestore.collection("ticket").document();
+        ref = firebaseFirestore.collection("talep").document();
         binding.btnTicketSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,12 +87,12 @@ public class musteriTicketCreation extends AppCompatActivity {
                                 Toast.makeText(musteriTicketCreation.this, "Bu talep oluşturulamaz lütfen bilgileri kontrol ediniz.", Toast.LENGTH_LONG).show();
                             } else {
                                 Map<String, Object> reg_entry = new HashMap<>();
-                                reg_entry.put("Detay", input_eposta_tel.getText().toString());
-                                reg_entry.put("Konu", input_konu.getText().toString());
-                                reg_entry.put("Kurum", autoCompleteTxt.getText().toString());
+                                reg_entry.put("Email", input_eposta_tel.getText().toString());
+                                reg_entry.put("Detail", input_konu.getText().toString());
+                                reg_entry.put("Company", autoCompleteTxt.getText().toString());
                                 reg_entry.put("ID", ticketNumber);
 
-                                firebaseFirestore.collection("ticket")
+                                firebaseFirestore.collection("talep")
                                         .add(reg_entry)
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                             @Override
@@ -110,7 +110,7 @@ public class musteriTicketCreation extends AppCompatActivity {
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(musteriTicketCreation.this, "HATA!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(musteriTicketCreation.this, "Hata!", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                             }

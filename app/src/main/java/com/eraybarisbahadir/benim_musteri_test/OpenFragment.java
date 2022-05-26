@@ -2,11 +2,24 @@ package com.eraybarisbahadir.benim_musteri_test;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.eraybarisbahadir.benim_musteri_test.model.Talep;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +27,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class OpenFragment extends Fragment {
+
+
+    private FirebaseFirestore firebaseFirestore;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +70,10 @@ public class OpenFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        getticketData();
     }
 
     @Override
@@ -61,4 +82,39 @@ public class OpenFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_open, container, false);
     }
+
+    private void getticketData() {
+        firebaseFirestore.collection("talep").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                if (error != null) {
+
+                }
+                if (value != null) {
+                    for (DocumentSnapshot snapshot : value.getDocuments()) {
+                        Map<String, Object> data = snapshot.getData();
+
+                        // Zorunlu casting yapıldı
+                        String ticket_id = (String) data.get("ID");
+                        String user_email = (String) data.get("Email");
+                        String details = (String) data.get("Detail");
+                        Timestamp date = (Timestamp) data.get("Date");
+
+                        Talep talep = new Talep(ticket_id,user_email,details,date);
+
+
+                    }
+
+                    }
+
+        }
+
+
+                });
+
+
+
+        };
+
 }
