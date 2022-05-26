@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eraybarisbahadir.benim_musteri_test.databinding.ActivityTicketBinding;
@@ -23,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,8 +37,9 @@ public class OpenFragment extends Fragment {
 
     private FirebaseFirestore firebaseFirestore;
     ArrayList<Talep> talepArrayList;
-    //private ActivityTicketBinding binding;
-    private RecyclerView recyclerView;
+    List<String> talep = new ArrayList<String>();
+    String[] talepArray = talepArrayList.toArray(new String[0]);
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -73,35 +76,63 @@ public class OpenFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //binding = ActivityTicketBinding.inflate(getLayoutInflater());
-        //View view = binding.getRoot();
-        //setContentView(view);
-
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
+    }
+
+    @Override
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.fragment_open,container,false);
+        getticketData();
+
         talepArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        getticketData();
+        RecyclerView rv = new RecyclerView(getContext());
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv.setAdapter(new TalepAdapter(talepArray));
+        return rv;
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_open, container, false);
+    public class TalepAdapter extends RecyclerView.Adapter<TalepHolder> {
+        private String[] dataSource;
+        public TalepAdapter(String[] dataArgs){
+            dataSource = dataArgs;
+        }
 
-        recyclerView = view.findViewById(R.id.recycler_view_ticket);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new TalepAdapter(talepArrayList));
+        @Override
+        public TalepHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = new TextView(parent.getContext());
+            TalepHolder viewHolder = new TalepHolder(view);
+            return viewHolder;
+        }
 
+        @Override
+        public void onBindViewHolder(TalepHolder holder, int position) {
+            holder.recycler_view_ticket.setText(dataSource[position]);
+        }
+
+        @Override
+        public int getItemCount() {
+            return dataSource.length;
+        }
     }
+
+    public static class TalepHolder extends RecyclerView.ViewHolder{
+        public TextView recycler_view_ticket;
+        public TalepHolder(View itemView) {
+            super(itemView);
+            recycler_view_ticket = (TextView) itemView;
+        }
+    }
+
+
 
     private void getticketData() {
         firebaseFirestore.collection("talep").addSnapshotListener(new EventListener<QuerySnapshot>() {
