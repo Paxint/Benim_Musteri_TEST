@@ -10,22 +10,13 @@
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_company_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_splash.xml" value="0.25" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_ticket.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_ticket_status.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_dashboard.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_home.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_notifications.xml" value="0.12907608695652173" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_ongoing.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_ongoing_empty.xml" value="0.365625" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_open.xml" value="0.12907608695652173" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_open_empty.xml" value="0.365625" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_open_solved.xml" value="0.365625" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_solved_empty.xml" value="0.33" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/kurum_list.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/ticket_creation.xml" value="0.30104166666666665" />
-        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/ticket_find.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.318" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.174" />
@@ -43,6 +34,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable/ic_question_mark.xml" value="0.1015" />
+        <entry key="app/src/main/res/drawable/logo_toolbar_background.xml" value="0.15452874755859375" />
         <entry key="app/src/main/res/drawable/question_mark_icon.xml" value="0.206" />
         <entry key="app/src/main/res/drawable/saga_ok.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.1585" />
@@ -66,15 +58,19 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2128623188405797" />
         <entry key="app/src/main/res/layout/activity_ticket.xml" value="0.4659754435221354" />
         <entry key="app/src/main/res/layout/fragment_ongoing.xml" value="0.15489130434782608" />
-        <entry key="app/src/main/res/layout/fragment_open.xml" value="0.10364583333333334" />
+        <entry key="app/src/main/res/layout/fragment_ongoing_empty.xml" value="0.30867892261650276" />
+        <entry key="app/src/main/res/layout/fragment_open.xml" value="0.4467076619466146" />
+        <entry key="app/src/main/res/layout/fragment_open_empty.xml" value="0.30867892261650276" />
         <entry key="app/src/main/res/layout/fragment_solved.xml" value="0.10364583333333334" />
+        <entry key="app/src/main/res/layout/fragment_solved_empty.xml" value="0.30867892261650276" />
         <entry key="app/src/main/res/layout/kurum_list.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/register_success.xml" value="0.2995361328125" />
         <entry key="app/src/main/res/layout/sign_up_success.xml" value="0.16485507246376813" />
         <entry key="app/src/main/res/layout/ticket_creation.xml" value="0.19090909090909092" />
-        <entry key="app/src/main/res/layout/ticket_creation_success.xml" value="0.16485507246376813" />
+        <entry key="app/src/main/res/layout/ticket_creation_success.xml" value="0.1600378727567368" />
         <entry key="app/src/main/res/layout/ticket_edit_success.xml" value="0.16485507246376813" />
-        <entry key="app/src/main/res/layout/ticket_find.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ticket_find.xml" value="0.2672266642252604" />
+        <entry key="app/src/main/res/layout/user_profile.xml" value="0.2743878459563464" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35516408284505213" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1585" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1585" />

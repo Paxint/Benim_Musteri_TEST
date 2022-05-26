@@ -5,7 +5,7 @@
     <string name="prompt_password">Şifre</string>
     <string name="action_sign_in">Giriş yap veya Kayıt ol</string>
     <string name="action_sign_in_short">Giriş yap</string>
-    <string name="welcome">"Hoşgeldin !"</string>
+    <string name="welcome">"Hoşgeldin!"</string>
     <string name="invalid_username">Geçerli bir kullanıcı adı değil</string>
     <string name="invalid_password">Şifre 5 veya daha fazla karakter olmalı</string>
     <string name="login_failed">"Login failed"</string>
