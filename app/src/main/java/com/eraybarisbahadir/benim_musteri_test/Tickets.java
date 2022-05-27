@@ -1,9 +1,10 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -42,25 +43,27 @@ public class Tickets extends AppCompatActivity {
         });
 
     }
-/*
+    // create an action bar button
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-            case R.id.user_profile:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // R.menu.mymenu is a reference to an xml file named mymenu.xml which should be inside your res/menu directory.
+        // If you don't have res/menu, just create a directory named "menu" inside res
+        getMenuInflater().inflate(R.menu.action_bar_button, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
- */
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.user_profile) {
+            Intent intent=new Intent(Tickets.this,UserProfile.class);
+            startActivity(intent);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void replaceFragment(Fragment fragment){
 

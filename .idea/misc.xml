@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/drawable/saga_ok.xml" value="0.196" />
+        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/drawable/user_profile.xml" value="0.2345" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout-w1240dp/activity_company_login.xml" value="0.23560910307898258" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_choose_one.xml" value="0.33" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_company_login.xml" value="0.358695652173913" />
@@ -12,11 +13,14 @@
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_ticket_creation_success.xml" value="0.29846014492753625" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/activity_ticket_status.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_dashboard.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_home.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_notifications.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/fragment_open.xml" value="0.12907608695652173" />
+        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/layout/user_profile.xml" value="0.228125" />
+        <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/menu/action_bar_button.xml" value="0.228125" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.318" />
         <entry key="..\:/Users/Pax/AndroidStudioProjects/Benim_Musteri_TEST/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.174" />

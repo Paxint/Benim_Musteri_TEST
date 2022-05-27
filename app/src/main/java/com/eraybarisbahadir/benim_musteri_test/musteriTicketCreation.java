@@ -45,6 +45,7 @@ public class musteriTicketCreation extends AppCompatActivity {
     EditText input_eposta_tel;
     EditText input_konu;
     TextView ticketNumber;
+    int ticketNum;
     List<String> tempname = new ArrayList<String>();
     ActivityMusteriTicketCreationBinding binding;
 
@@ -54,6 +55,7 @@ public class musteriTicketCreation extends AppCompatActivity {
         binding = ActivityMusteriTicketCreationBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         kurumArrayList = new ArrayList<>();
@@ -101,10 +103,9 @@ public class musteriTicketCreation extends AppCompatActivity {
                                                 UUID ticketNumberL = UUID.randomUUID();
                                                 String ticketNum = ticketNumberL.toString();
 
-                                                Intent yolla = new Intent(musteriTicketCreation.this, TicketCreationSuccess.class);
-                                                yolla.putExtra(ticketNum,ticketNum);
-                                                startActivity(yolla);
-                                                finish();
+                                                Intent myIntent = new Intent(musteriTicketCreation.this, TicketCreationSuccess.class);
+                                                myIntent.putExtra("ticketNum", ticketNum);
+                                                startActivity(myIntent);
 
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
@@ -114,6 +115,11 @@ public class musteriTicketCreation extends AppCompatActivity {
                                             }
                                         });
                             }
+                        }
+
+                        private int toString(int ticketNumber) {
+                            ticketNum=ticketNumber;
+                            return ticketNum;
                         }
                     });
                 }
@@ -168,7 +174,7 @@ public class musteriTicketCreation extends AppCompatActivity {
                         // Zorunlu casting yapıldı
                         String name =(String) data.get("Name");
                         tempname.add(name);
-                        System.out.println(tempname);
+
                     }
                 }
             }

@@ -65,6 +65,8 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
 
 
 
+
+
     }
     // this event will enable the back
     // function to the button on press
@@ -77,7 +79,26 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         }
         return super.onOptionsItemSelected(item);
     }
+    /*
+    public void itemClicked(View v) {
 
+        //code to check if this checkbox is checked!
+        CheckBox checkBox = (CheckBox)v;
+        if(checkBox.isChecked()){
+                // Check if user is signed in (non-null) and update UI accordingly.
+                FirebaseUser currentUser = auth.getCurrentUser();
+                if(currentUser != null){
+                    reload();
+                }
+            }
+
+
+
+
+        }
+
+
+     */
 
 
             public void onClick(View v){
@@ -113,6 +134,7 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
                     startActivity(register_view);
                     break;
             }
+
 
 
 
