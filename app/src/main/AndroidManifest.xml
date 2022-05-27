@@ -9,6 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Benim_Musteri_TEST">
         <activity
+            android:name=".musteriTicketFollow"
+            android:exported="false"
+            android:label="Müşteri Talep Takibi" />
+        <activity
             android:name=".TicketDetailsActivity"
             android:exported="false" />
         <activity
@@ -18,7 +22,7 @@
         <activity
             android:name=".musteriTicketCreation"
             android:exported="false"
-            android:label="Müşteri Talep Oluşturma"/>
+            android:label="Müşteri Talep Oluşturma" />
         <activity
             android:name=".ChooseOneActivity"
             android:exported="false" />
@@ -28,15 +32,11 @@
         <activity
             android:name=".kurumLogin"
             android:exported="false"
-            android:label="Kurum Giriş"/>
+            android:label="Kurum Giriş" />
         <activity
             android:name=".kurumSignUp"
             android:exported="false"
-            android:label="Kurum Kayıt"/>
-        <activity
-            android:name=".musteriTicketFollow"
-            android:exported="false"
-            android:label="Müşteri Talep Takibi"/>
+            android:label="Kurum Kayıt" />
         <activity
             android:name=".Tickets"
             android:exported="false"

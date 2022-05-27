@@ -7,7 +7,7 @@
     tools:context=".musteriTicketFollow">
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTicketFollow"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="215dp"
@@ -31,13 +31,13 @@
         android:layout_gravity="start"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/BMLACI"
-        android:enabled="false"
-        android:text="Talebimi bul"
         android:fontFamily="@font/bold"
+        android:onClick="buttonsearchclicked"
+        android:text="Talebimi bul"
         android:textAllCaps="false"
         android:textColor="@color/BMSARI"
         android:textStyle="bold"
         app:cornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toStartOf="@+id/editTicketFollow"
+        app:layout_constraintTop_toBottomOf="@+id/editTicketFollow" />
 </androidx.constraintlayout.widget.ConstraintLayout>
