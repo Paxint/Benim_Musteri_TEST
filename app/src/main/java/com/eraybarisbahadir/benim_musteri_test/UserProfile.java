@@ -49,7 +49,7 @@ public class UserProfile extends AppCompatActivity {
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(UserProfile.this,kurumLogin.class);
+                Intent intent=new Intent(UserProfile.this,ChooseOneActivity.class);
                 startActivity(intent);
 
             }

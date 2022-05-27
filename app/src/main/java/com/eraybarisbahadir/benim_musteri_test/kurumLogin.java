@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class kurumLogin extends AppCompatActivity implements View.OnClickListener{
@@ -31,6 +34,7 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
     FirebaseFirestore db;
     private FirebaseAuth auth;
     private ActivityLoginBinding binding;
+    //CheckBox checkBox;
 
 
     @Override
@@ -61,13 +65,22 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
+       /* checkBox=findViewById(R.id.checkBox);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()) {
+                    // Check if user is signed in (non-null) and update UI accordingly.
+                    FirebaseUser currentUser = auth.getCurrentUser();
+                }
+                    else if(!compoundButton.isChecked()){
+                    }
+                }
+            });
 
+        */
+        }
 
-
-
-
-
-    }
     // this event will enable the back
     // function to the button on press
     @Override
@@ -79,26 +92,6 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         }
         return super.onOptionsItemSelected(item);
     }
-    /*
-    public void itemClicked(View v) {
-
-        //code to check if this checkbox is checked!
-        CheckBox checkBox = (CheckBox)v;
-        if(checkBox.isChecked()){
-                // Check if user is signed in (non-null) and update UI accordingly.
-                FirebaseUser currentUser = auth.getCurrentUser();
-                if(currentUser != null){
-                    reload();
-                }
-            }
-
-
-
-
-        }
-
-
-     */
 
 
             public void onClick(View v){

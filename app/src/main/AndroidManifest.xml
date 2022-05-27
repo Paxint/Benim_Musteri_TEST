@@ -8,31 +8,31 @@
         android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Benim_Musteri_TEST">
+
         <activity
             android:name=".musteriTicketFollow"
             android:exported="false"
             android:label="Müşteri Talep Takibi" />
         <activity
             android:name=".TicketDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TicketCreationSuccess"
             android:exported="false"
-            android:label="Ticket YARATILDI" />
+            android:label=" "/>
         <activity
             android:name=".musteriTicketCreation"
             android:exported="false"
             android:label="Müşteri Talep Oluşturma" />
         <activity
             android:name=".ChooseOneActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label=" "/>
         <activity
             android:name=".CustomerChooseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label=" "/>
         <activity
             android:name=".kurumLogin"
             android:exported="false"
-            android:label="Kurum Giriş" />
+            android:label="Kurum Giriş"/>
         <activity
             android:name=".kurumSignUp"
             android:exported="false"
@@ -44,10 +44,11 @@
         <activity
             android:name=".UserProfile"
             android:exported="false"
-            android:label="Kullanıcı" />
+            android:label="Profilim" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label=" ">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

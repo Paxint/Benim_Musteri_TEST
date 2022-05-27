@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/solved_ticket"
@@ -133,6 +139,7 @@
         android:id="@+id/imageView2"
         android:layout_width="148dp"
         android:layout_height="180dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btn_logout"
         app:layout_constraintEnd_toEndOf="@+id/user_info"
         app:layout_constraintHorizontal_bias="0.07"
@@ -161,3 +168,5 @@
         app:strokeColor="@color/BMGRI"
         app:strokeWidth="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
