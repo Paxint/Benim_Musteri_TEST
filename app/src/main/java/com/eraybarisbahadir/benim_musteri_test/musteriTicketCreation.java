@@ -1,6 +1,5 @@
 package com.eraybarisbahadir.benim_musteri_test;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,8 +32,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Stack;
-import java.util.UUID;
 
 public class musteriTicketCreation extends AppCompatActivity {
 
@@ -67,9 +63,7 @@ public class musteriTicketCreation extends AppCompatActivity {
         input_konu = findViewById(R.id.input_konu);
         input_eposta_tel = findViewById(R.id.input_eposta_tel);
         getData();
-        //int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
         int ticketNumber = new Random().nextInt(900000)+10000;
-
         ref = firebaseFirestore.collection("talep").document();
         binding.btnTicketSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +98,6 @@ public class musteriTicketCreation extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Toast.makeText(musteriTicketCreation.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT);
-                                                //UUID ticketNumberL = UUID.randomUUID();
                                                 String ticketNum = String.valueOf(ticketNumber);
 
                                                 setContentView(R.layout.activity_ticket_creation_success);
@@ -124,16 +117,16 @@ public class musteriTicketCreation extends AppCompatActivity {
                 }
             }
         });
-        // calling the action bar
+        // Üst bar çağırılıyo
         ActionBar actionBar = getSupportActionBar();
 
-        // Customize the back button
+        // Geri dön butonu customize ediliyo
         actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
 
-        // showing the back button in action bar
+        // Action bar üzerinde göster
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        //here I put kurum list codes
+        //Kurum Dropdown listesi için
         autoCompleteTxt = findViewById(R.id.auto_complete_txt);
         adapterItems = new ArrayAdapter<String>(this, R.layout.kurum_list, tempname);
         autoCompleteTxt.setAdapter(adapterItems);
@@ -145,8 +138,7 @@ public class musteriTicketCreation extends AppCompatActivity {
         });
     }
 
-    // this event will enable the back
-    // function to the button on press
+    // Geri butonunu çalıştıran function
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

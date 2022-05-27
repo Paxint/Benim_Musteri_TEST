@@ -5,7 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BMSARI"
-    tools:context=".TicketCreationSuccess">
+    >
+
+    <ImageView
+        android:id="@+id/success_img"
+        android:layout_width="350dp"
+        android:layout_height="285.95dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ticket_success"
+        app:layout_constraintVertical_bias="0.016"
+        app:srcCompat="@drawable/ticket_success" />
 
     <TextView
         android:id="@+id/txt_ticket_success"
@@ -23,20 +35,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
-
-    <ImageView
-        android:id="@+id/success_img"
-        android:layout_width="350dp"
-        android:layout_height="285.95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ticket_success"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ticket_success"
-        />
+        app:layout_constraintVertical_bias="0.131" />
 
     <TextView
         android:id="@+id/txt_ticket_no"
@@ -66,15 +65,6 @@
         app:layout_constraintStart_toStartOf="@+id/txt_ticket_no"
         app:layout_constraintTop_toBottomOf="@+id/txt_ticket_no" />
 
-    <ImageButton
-        android:id="@+id/btn_forward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="-15dp"
-        android:layout_marginBottom="-15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/forward_arrow_circle"
-        tools:ignore="SpeakableTextPresentCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
