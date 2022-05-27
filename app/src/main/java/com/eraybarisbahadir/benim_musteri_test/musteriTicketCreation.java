@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.Stack;
 import java.util.UUID;
 
 public class musteriTicketCreation extends AppCompatActivity {
@@ -44,7 +47,7 @@ public class musteriTicketCreation extends AppCompatActivity {
     Button btn_ticket_send;
     EditText input_eposta_tel;
     EditText input_konu;
-    TextView ticketNumber;
+    TextView ticketNumbertxt;
     int ticketNum;
     List<String> tempname = new ArrayList<String>();
     ActivityMusteriTicketCreationBinding binding;
@@ -64,7 +67,8 @@ public class musteriTicketCreation extends AppCompatActivity {
         input_konu = findViewById(R.id.input_konu);
         input_eposta_tel = findViewById(R.id.input_eposta_tel);
         getData();
-        int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
+        //int ticketNumber = (int) UUID.randomUUID().getLeastSignificantBits();
+        int ticketNumber = new Random().nextInt(900000)+10000;
 
         ref = firebaseFirestore.collection("talep").document();
         binding.btnTicketSend.setOnClickListener(new View.OnClickListener() {
@@ -99,13 +103,13 @@ public class musteriTicketCreation extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
-                                                Toast.makeText(musteriTicketCreation.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT).show();
-                                                UUID ticketNumberL = UUID.randomUUID();
-                                                String ticketNum = ticketNumberL.toString();
+                                                Toast.makeText(musteriTicketCreation.this, "Başarıyla gönderildi", Toast.LENGTH_SHORT);
+                                                //UUID ticketNumberL = UUID.randomUUID();
+                                                String ticketNum = String.valueOf(ticketNumber);
 
-                                                Intent myIntent = new Intent(musteriTicketCreation.this, TicketCreationSuccess.class);
-                                                myIntent.putExtra("ticketNum", ticketNum);
-                                                startActivity(myIntent);
+                                                setContentView(R.layout.activity_ticket_creation_success);
+                                                TextView ticketNumbertxt = (TextView) findViewById(R.id.ticketNumbertxt);
+                                                ticketNumbertxt.setText(ticketNum);
 
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
@@ -115,11 +119,6 @@ public class musteriTicketCreation extends AppCompatActivity {
                                             }
                                         });
                             }
-                        }
-
-                        private int toString(int ticketNumber) {
-                            ticketNum=ticketNumber;
-                            return ticketNum;
                         }
                     });
                 }
