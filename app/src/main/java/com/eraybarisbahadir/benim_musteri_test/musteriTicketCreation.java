@@ -117,16 +117,14 @@ public class musteriTicketCreation extends AppCompatActivity {
                 }
             }
         });
-        // Üst bar çağırılıyo
+        // Üst bar çağırılıyor
         ActionBar actionBar = getSupportActionBar();
-
-        // Geri dön butonu customize ediliyo
+        // Geri dön butonu customize ediliyor
         actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
-
         // Action bar üzerinde göster
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        //Kurum Dropdown listesi için
+        // Kurum Dropdown listesi için
         autoCompleteTxt = findViewById(R.id.auto_complete_txt);
         adapterItems = new ArrayAdapter<String>(this, R.layout.kurum_list, tempname);
         autoCompleteTxt.setAdapter(adapterItems);

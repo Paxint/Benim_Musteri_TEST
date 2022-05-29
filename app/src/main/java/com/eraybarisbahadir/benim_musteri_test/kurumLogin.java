@@ -55,13 +55,9 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         register.setOnClickListener(this);
         auth=FirebaseAuth.getInstance();
 
-        // calling the action bar
+
         ActionBar actionBar = getSupportActionBar();
-
-        // Customize the back button
         actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
-
-        // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
@@ -81,8 +77,6 @@ public class kurumLogin extends AppCompatActivity implements View.OnClickListene
         */
         }
 
-    // this event will enable the back
-    // function to the button on press
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

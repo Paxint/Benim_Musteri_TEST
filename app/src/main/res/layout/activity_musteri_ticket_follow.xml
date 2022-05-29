@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".musteriTicketFollow">
 
-    <EditText
-        android:id="@+id/editTicketFollow"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="215dp"
-        android:background="@drawable/custom_input"
-        android:fontFamily="@font/regular"
-        android:hint="Talep no"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonticketsearch"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/BMLACI"
-        android:fontFamily="@font/bold"
-        android:onClick="buttonsearchclicked"
-        android:text="Talebimi bul"
-        android:textAllCaps="false"
-        android:textColor="@color/BMSARI"
-        android:textStyle="bold"
-        app:cornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/editTicketFollow"
-        app:layout_constraintTop_toBottomOf="@+id/editTicketFollow" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTicketFollow"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="215dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/regular"
+            android:hint="Talep no"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:selectAllOnFocus="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonticketsearch"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="260dp"
+            android:backgroundTint="@color/BMLACI"
+            android:fontFamily="@font/bold"
+            android:onClick="buttonsearchclicked"
+            android:text="Talebimi bul"
+            android:textAllCaps="false"
+            android:textColor="@color/BMSARI"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTicketFollow"
+            app:layout_constraintTop_toBottomOf="@+id/editTicketFollow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

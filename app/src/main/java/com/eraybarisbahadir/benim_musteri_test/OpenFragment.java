@@ -79,7 +79,6 @@ public class OpenFragment extends Fragment {
 
         recyclerView=view.findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //getticketData();
         recyclerView.setAdapter(new ItemAdapter(getticketData(),getContext()));
 
         return view;

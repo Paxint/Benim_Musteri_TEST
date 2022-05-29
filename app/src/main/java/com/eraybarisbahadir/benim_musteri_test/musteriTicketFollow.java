@@ -42,13 +42,9 @@ public class musteriTicketFollow extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        // calling the action bar
+
         ActionBar actionBar = getSupportActionBar();
-
-        // Customize the back button
         actionBar.setHomeAsUpIndicator(R.drawable.mybackbutton);
-
-        // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
@@ -106,8 +102,6 @@ public class musteriTicketFollow extends AppCompatActivity {
 
 }
 
-    // this event will enable the back
-    // function to the button on press
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -129,9 +123,6 @@ public class musteriTicketFollow extends AppCompatActivity {
                 if (value != null) {
                     for (DocumentSnapshot snapshot : value.getDocuments()) {
                         Map<String, Object> data = snapshot.getData();
-
-                        // Zorunlu casting yapıldı
-
 
                     }
                 }

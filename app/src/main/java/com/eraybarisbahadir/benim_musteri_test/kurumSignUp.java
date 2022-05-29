@@ -35,6 +35,7 @@ public class kurumSignUp extends AppCompatActivity {
     TextView signin;
     FirebaseFirestore firebaseFirestore;
     DocumentReference ref;
+    private Button LoginTikla;
 
 
     @Override
@@ -53,9 +54,17 @@ public class kurumSignUp extends AppCompatActivity {
         signin_view=findViewById(R.id.signin_view);
         FirebaseAuth auth;
         auth = FirebaseAuth.getInstance();
+        LoginTikla=(Button) findViewById(R.id.signin_view);
 
 
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        LoginTikla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCompanyLogin1();
+            }
+        });
 
         ref = firebaseFirestore.collection("kurum").document();
 
@@ -118,15 +127,12 @@ public class kurumSignUp extends AppCompatActivity {
                         }
                     });
                 }
-                signin_view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(kurumSignUp.this, kurumLogin.class);
-                        startActivity(intent);
-                    }
-                });
 
             }
         });
+    }
+    public void openCompanyLogin1() {
+        Intent intent = new Intent(kurumSignUp.this, kurumLogin.class);
+        startActivity(intent);
     }
 }

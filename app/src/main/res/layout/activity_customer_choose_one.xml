@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ChooseOneActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -15,7 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         app:srcCompat="@drawable/choose_one_blue" />
 
     <ImageView
@@ -50,7 +55,10 @@
         android:id="@+id/buttonmchoose1"
         android:layout_width="320dp"
         android:layout_height="190dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="40dp"
         android:clickable="true"
+        android:fontFamily="@font/bold"
         android:linksClickable="false"
         android:onClick="musteriCreateClick"
         android:paddingLeft="30dp"
@@ -59,15 +67,11 @@
         android:textAllCaps="false"
         android:textColor="@color/BMLACI"
         android:textSize="36sp"
-        android:fontFamily="@font/bold"
         app:backgroundTint="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
         app:strokeColor="@color/BMGRI"
         app:strokeWidth="2dp" />
 
@@ -75,6 +79,8 @@
         android:id="@+id/buttonmchoose2"
         android:layout_width="320dp"
         android:layout_height="190dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/bold"
         android:onClick="musteriFollowClick"
         android:paddingLeft="30dp"
         android:text="Talep           Takibi"
@@ -82,14 +88,13 @@
         android:textAllCaps="false"
         android:textColor="@color/BMLACI"
         android:textSize="36sp"
-        android:fontFamily="@font/bold"
         app:backgroundTint="@color/white"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:strokeColor="@color/BMGRI"
         app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

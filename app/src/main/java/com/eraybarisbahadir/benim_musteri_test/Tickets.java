@@ -43,7 +43,7 @@ public class Tickets extends AppCompatActivity {
         });
 
     }
-    // create an action bar button
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // R.menu.mymenu is a reference to an xml file named mymenu.xml which should be inside your res/menu directory.
@@ -52,7 +52,6 @@ public class Tickets extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    // handle button activities
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
